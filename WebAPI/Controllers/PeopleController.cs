@@ -17,9 +17,9 @@ namespace WebAPI.Controllers
     {
         IPersonService _personService;
 
-        public PeopleController(IPersonService personService)
+        public PeopleController()
         {
-            _personService = personService;
+            _personService = new PersonManager(new EfPersonDal());
         }
 
         [HttpGet("getall")]

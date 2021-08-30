@@ -30,7 +30,7 @@ namespace ConsoleUI
             {
                 foreach (var person in result.Data)
                 {
-                    Console.WriteLine(person.PersonName + "/" + person.PersonName);
+                    Console.WriteLine(person.PersonName + "/" + person.PersonSurname);
                 }
 
             }

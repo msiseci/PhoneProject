@@ -15,12 +15,9 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(p => p.PersonName).NotEmpty();
             RuleFor(p => p.PersonName).MinimumLength(1);
             RuleFor(p => p.PhoneNumber).NotEmpty();
-            RuleFor(p => p.PersonName).Must(StartWithA);
+           
         }
 
-        private bool StartWithA(string arg)
-        {
-            return arg.StartsWith("A");
-        }
+       
     }
 }

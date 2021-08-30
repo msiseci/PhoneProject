@@ -25,6 +25,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  PersonId = p.PersonId,
                                  PersonName = p.PersonName,
                                  PersonSurname = p.PersonSurname,
+                                 PhoneNumber= p.PhoneNumber,
                                  PersonMail = p.PersonMail
                              };
                 return result.ToList();
