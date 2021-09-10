@@ -15,13 +15,13 @@ namespace DataAccess.Concrete.InMemory
         List<Person> _people;
         public InMemoryPersonDal()
         {
-            _people = new List<Person> {
-              new Person { PersonId=1 , PersonName="Merve" , PersonSurname=" Siseci" , PhoneNumber=0536 , PersonMail="mervess@hotmail.com"},
-              new Person { PersonId=2 , PersonName="Seda" , PersonSurname=" Yildirim" , PhoneNumber=0532, PersonMail="seda@hotmail.com"},
-              new Person { PersonId=3,  PersonName="Serap" , PersonSurname=" Yilmaz" , PhoneNumber=053 , PersonMail="seraps@hotmail.com"},
-              new Person { PersonId=4, PersonName="Özlem" , PersonSurname=" Demir" , PhoneNumber=053 , PersonMail="demirozlem@hotmail.com"},
-              new Person { PersonId=5,  PersonName="Meltem" , PersonSurname=" Yildiz" , PhoneNumber=0534 , PersonMail="meltemm@hotmail.com"}
-            };
+            //_people = new List<Person> {
+            //  new Person { PersonId=1 , PersonName="Merve" , PersonSurname=" Siseci" , PhoneNumber=0536 , PersonMail="mervess@hotmail.com"},
+            //  new Person { PersonId=2 , PersonName="Seda" , PersonSurname=" Yildirim" , PhoneNumber=0532, PersonMail="seda@hotmail.com"},
+            //  new Person { PersonId=3,  PersonName="Serap" , PersonSurname=" Yilmaz" , PhoneNumber=053 , PersonMail="seraps@hotmail.com"},
+            //  new Person { PersonId=4, PersonName="Özlem" , PersonSurname=" Demir" , PhoneNumber=053 , PersonMail="demirozlem@hotmail.com"},
+            //  new Person { PersonId=5,  PersonName="Meltem" , PersonSurname=" Yildiz" , PhoneNumber=0534 , PersonMail="meltemm@hotmail.com"}
+            //};
         }
         public void Add(Person person)
         {

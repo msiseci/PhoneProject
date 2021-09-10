@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 namespace DataAccess.Concrete.EntityFramework
 {
     // Context : Db tabloları ile proje classlarını bağlamak.
-   public class NorthwindContext : DbContext
+   public class DatabaseContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Phone;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=.;Database=Phone;Trusted_Connection=true");
 
         }
         public DbSet<Person> People { get; set; }

@@ -77,7 +77,7 @@ namespace Business.Concrete
         {   
             throw new NotImplementedException();
         }
-        private IResult CheckIfPhoneNumberExists(int phoneNumber)
+        private IResult CheckIfPhoneNumberExists(string phoneNumber)
         {
             var result = _personDal.GetAll(p => p.PhoneNumber == phoneNumber).Any();
             if(result)

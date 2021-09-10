@@ -16,7 +16,7 @@ namespace Entities.DTOs
 
         public int MyProperty { get; set; }
 
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         public string PersonMail { get; set; }
 

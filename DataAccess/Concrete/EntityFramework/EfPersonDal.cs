@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfPersonDal : EfEntityRepositoryBase<Person, NorthwindContext>, IPersonDal
+    public class EfPersonDal : EfEntityRepositoryBase<Person, DatabaseContext>, IPersonDal
 
     {
         public List<PersonDetailDto> GetPersonDetails()
         {
-            using (NorthwindContext context = new NorthwindContext())
+            using (DatabaseContext context = new DatabaseContext())
             {
                 var result = from p in context.People
                              select new PersonDetailDto
