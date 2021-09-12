@@ -8,7 +8,7 @@ namespace Business.Constants
 {
    public static class Messages
     {
-        public static string PersonAdded = "Kişi Eklendi.";
+        public static string PersonAdded = " ";
         public static string PersonNameInvalid = "Kişi ismi boş bırakılamaz.";
         public static string PersonSurnameInvalid = "Kişi Soyismi boş bırakılamaz.";
         public static string PeopleListed = "Kişiler Listelendi.";

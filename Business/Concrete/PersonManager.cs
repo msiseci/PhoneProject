@@ -48,6 +48,12 @@ namespace Business.Concrete
                      
         }
 
+        public IResult Delete(int id)
+        {
+            var person = _personDal.Get(i => i.PersonId == id);
+            _personDal.Delete(person);
+            return new SuccessResult(Messages.PersonAdded);
+        }
 
         public IDataResult<List<Person>> GetAll()
         {
@@ -74,13 +80,30 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(PersonValidator))]
         public IResult Update(Person person)
-        {   
-            throw new NotImplementedException();
-        }
-        private IResult CheckIfPhoneNumberExists(string phoneNumber)
         {
-            var result = _personDal.GetAll(p => p.PhoneNumber == phoneNumber).Any();
-            if(result)
+            IResult result = BusinessRules.Run(CheckIfPhoneNumberExists(person.PhoneNumber,person.PersonId));
+
+            if (result != null)
+            {
+                return result;
+            }
+
+
+            _personDal.Update(person);
+            return new SuccessResult(Messages.PersonAdded);
+        }
+        private IResult CheckIfPhoneNumberExists(string phoneNumber,int personId=0)
+        {
+            var query= _personDal.GetQuery(p => p.PhoneNumber == phoneNumber);
+
+            if (personId!=0)
+            {
+                query= query.Where(i=>i.PersonId!=personId);
+
+            }
+            var result = query.Any();
+
+            if (result)
             {
                 return new ErrorResult(Messages.PhoneNumberAlreadyExists);
             }

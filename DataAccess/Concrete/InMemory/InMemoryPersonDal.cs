@@ -71,5 +71,10 @@ namespace DataAccess.Concrete.InMemory
         {
             throw new NotImplementedException();
         }
+
+        public IQueryable<Person> GetQuery(Expression<Func<Person, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

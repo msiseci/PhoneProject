@@ -22,7 +22,7 @@ namespace Business.Abstract
 
         IResult Update(Person person);
 
-
+        IResult Delete(int id);
 
 
     }

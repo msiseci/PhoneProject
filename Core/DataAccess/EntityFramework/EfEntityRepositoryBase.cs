@@ -54,6 +54,13 @@ namespace Core.DataAccess.EntityFramework
             }
 
         }
+        public IQueryable<TEntity> GetQuery(Expression<Func<TEntity, bool>> filter = null)
+        {
+            TContext context = new TContext();
+          
+                return filter == null ? context.Set<TEntity>()
+              : context.Set<TEntity>().Where(filter);
+        }
 
         public void Update(TEntity entity)
         {

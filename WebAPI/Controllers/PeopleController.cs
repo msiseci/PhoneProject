@@ -60,7 +60,26 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        [HttpPost("update")]
+        public IActionResult Update (Person person)
+        {
+            var result = _personService.Update(person);
+            if(result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
-
+        [HttpPost("delete")]
+        public IActionResult Delete(Person person)
+        {
+            var result = _personService.Delete(person.PersonId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }
